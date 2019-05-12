@@ -1,0 +1,29 @@
+phina.globalize();
+
+phina.define('MainScene',{
+	//superClass:'CanvasScene',
+	superClass:'DisplayScene',
+	init:function(){
+		this.superInit();
+		
+		//this.backgroundColor='#444';
+		this.label=Label('Hello,world!').addChildTo(this);
+		this.label.x=this.gridX.center();
+		this.label.y=this.gridY.center();
+		this.label.backgroundColor='#444';
+		this.setInteractive(true);
+		this.onpointstart = function(){
+			alert("abc");
+		}
+		/*
+		this.label.fill='white';
+		*/
+	},
+});
+
+phina.main(function(){
+	var app=GameApp({
+		startLabel:'main',
+	});
+	app.run();
+});
